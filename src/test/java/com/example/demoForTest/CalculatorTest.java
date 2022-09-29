@@ -1,8 +1,6 @@
 package com.example.demoForTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -39,9 +37,11 @@ public class CalculatorTest {
 		Calculator cal = new Calculator();
 		assertEquals(3, cal.divide(12, 4));
 		assertNotNull(cal.divide(12, 4));
-		assertThrows(ArithmeticException.class, () ->{
-			cal.divide(12, 0);
-		});
+		assertThrows(ArithmeticException.class, 
+				     () ->{
+			             cal.divide(12, 0);
+		             }
+				     ,"ArithmeticException");
 	}
 
 }
